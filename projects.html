@@ -1,47 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thisal Yapa - Projects</title>
-  <meta name="description" content="Check out Thisal Yapa's projects.">
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects — Thisal Yapa</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    (function() {
+      const stored = localStorage.getItem('theme');
+      if (stored) document.documentElement.setAttribute('data-theme', stored);
+      else document.documentElement.setAttribute('data-theme', 'dark');
+    })();
+  </script>
 </head>
 <body>
-
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="projects.html" class="active">Projects</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-
-  <div class="content fade-in">
-    <div class="contact-box">
-      <h1>My Projects</h1>
-      <p>Here are some of my coding and electronics projects that I’m proud of:</p>
-
-      <ul class="projects-list">
-        <li>Custom ARM Assembly Shell Program</li>
-        <li>Sorting Algorithm Visualizer</li>
-        <li>Personal Portfolio Website</li>
-        <li>Electronics Amplifier Design</li>
-        <li>Other small programming projects</li>
-      </ul>
-
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="index.html" class="logo">
+          <span class="logo-mark">TY</span>
+          <span class="logo-text">Thisal Yapa</span>
+        </a>
+      </div>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="projects.html" class="nav-link active">Projects</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
     </div>
-  </div>
+  </header>
 
+  <main>
+    <section class="container fade-up">
+      <h1>My Projects</h1>
+      <p>Here are some of my featured works and academic projects.</p>
+
+      <div class="project-grid">
+        <div class="about-card">
+          <h2>libtiny3d — Software Renderer in C</h2>
+          <p>A lightweight 3D graphics engine built entirely in C without OpenGL or DirectX, capable of rendering meshes, transformations, and shading from scratch.</p>
+        </div>
+
+        <div class="about-card">
+          <h2>ARM Assembly Shell</h2>
+          <p>A custom command-line shell built in ARM32 Assembly with support for built-in and user-defined commands like <code>mul</code> and <code>max</code>.</p>
+        </div>
+
+        <div class="about-card">
+          <h2>File Management System (FMS)</h2>
+          <p>A Python-based system using a doubly linked list and stack to handle file operations — built for CO1030 Data Structures coursework.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>© <span id="year"></span> Thisal Yapa • All rights reserved.</small>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
+
 
