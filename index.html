@@ -1,46 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thisal Yapa - Home</title>
-  <meta name="description" content="Welcome to Thisal Yapa's personal portfolio website.">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Thisal Yapa — Home</title>
+  <meta name="description" content="Thisal Yapa — Undergraduate Computer Engineering student at the University of Peradeniya, Sri Lanka. Developer, Engineer, Learner." />
 
-  <!-- Google Fonts -->
+  <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Theme preference: dark by default -->
+  <script>
+    (function() {
+      const stored = localStorage.getItem('theme');
+      if (stored) document.documentElement.setAttribute('data-theme', stored);
+      else document.documentElement.setAttribute('data-theme', 'dark');
+    })();
+  </script>
 </head>
 <body>
 
-  <nav>
-    <a href="index.html" class="active">Home</a>
-    <a href="about.html">About</a>
-    <a href="projects.html">Projects</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+<!-- NAVBAR -->
+<header class="site-header">
+  <div class="container header-inner">
+    <!-- Logo -->
+    <div class="brand">
+      <a href="index.html" class="logo">
+        <img src="FullLogo.png" alt="TTR Logo" class="site-logo">
+      </a>
+    </div>
 
-  <div class="content fade-in">
-    <div class="contact-box">
-      <h1>Hello, I'm Thisal Yapa</h1>
-      <img src="myphoto.jpg" alt="Thisal Yapa smiling">
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
 
-      <p>Welcome to my personal portfolio! I am a student and aspiring developer with a passion for programming, electronics, and building projects that make a difference. Feel free to explore my work and get in touch!</p>
-
-      <a href="projects.html"><button>View My Projects</button></a>
-
+    <!-- Controls -->
+    <div class="header-controls">
+      <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme" title="Toggle dark/light">
+        <i id="theme-icon" class="fas"></i>
+      </button>
+      <button id="menu-toggle" class="icon-btn mobile-only" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
   </div>
 
+  <!-- Mobile Navigation -->
+  <div id="mobile-nav" class="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</header>
+
+
+    <!-- Mobile nav (slides down) -->
+    <div id="mobile-nav" class="mobile-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content fade-up">
+          <h1 class="hello">Hi, I’m <span class="name">Thisal Yapa</span></h1>
+          <p class="typing-line"> <span id="typed"></span><span class="cursor">|</span></p>
+          <p class="lead">
+            I’m an undergraduate Computer Engineering student at the University of Peradeniya, Sri Lanka.
+            I love exploring systems programming, embedded design, and software development — 
+            building projects that combine code, creativity, and engineering.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="projects.html">View My Projects</a>
+            <a class="btn ghost" href="contact.html">Contact Me</a>
+          </div>
+
+         
+        </div>
+
+        <div class="hero-photo fade-up delay-1">
+          <div class="photo-frame">
+            <img src="myphoto.jpg" alt="Thisal Yapa" onerror="this.src='https://via.placeholder.com/420x420?text=Your+Photo'">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SNIPPET -->
+    <section class="about container fade-up delay-2">
+      <div class="about-card">
+        <h2>About Me</h2>
+        <p>
+          I’m an undergraduate student in Computer Engineering at the University of Peradeniya, Sri Lanka.
+          I’m passionate about programming, electronics, and systems — constantly learning and building meaningful projects.
+        </p>
+        <div class="about-actions">
+          <a class="link" href="projects.html">See projects →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <small>© <span id="year"></span> Thisal Yapa • All rights reserved.</small>
+      </div>
+      <div class="footer-right">
+        <nav class="footer-nav">
+          <a href="index.html">Home</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to top -->
+  <button id="scroll-top" class="scroll-top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+
+  <!-- Scripts -->
+  <script>
+    // Typing animation (with your new tagline)
+    (function() {
+      const texts = ["Undergraduate Computer Engineering Student (UOP) | Developer | Learner"];
+      const el = document.getElementById('typed');
+      const cursor = document.querySelector('.cursor');
+      let textIndex = 0, charIndex = 0, forward = true;
+
+      function tick() {
+        const text = texts[textIndex];
+        if (forward) {
+          if (charIndex < text.length) {
+            el.textContent += text[charIndex++];
+            setTimeout(tick, 60);
+          } else {
+            forward = false;
+            setTimeout(tick, 900);
+          }
+        } else {
+          if (charIndex > 0) {
+            el.textContent = text.slice(0, --charIndex);
+            setTimeout(tick, 30);
+          } else {
+            forward = true;
+            textIndex = (textIndex + 1) % texts.length;
+            setTimeout(tick, 300);
+          }
+        }
+      }
+      tick();
+
+      // Cursor blink
+      setInterval(() => {
+        cursor.style.opacity = (cursor.style.opacity == 0 ? 1 : 0);
+      }, 500);
+    })();
+
+    // Theme toggle
+    (function() {
+      const btn = document.getElementById('theme-toggle');
+      const icon = document.getElementById('theme-icon');
+      function setIcon(theme) {
+        icon.className = theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+      }
+      function getTheme() {
+        return document.documentElement.getAttribute('data-theme') || 'dark';
+      }
+      setIcon(getTheme());
+      btn.addEventListener('click', () => {
+        const newTheme = getTheme() === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        setIcon(newTheme);
+      });
+    })();
+
+    // Mobile menu toggle
+    (function() {
+      const menuBtn = document.getElementById('menu-toggle');
+      const mobileNav = document.getElementById('mobile-nav');
+      menuBtn && menuBtn.addEventListener('click', () => {
+        mobileNav.classList.toggle('open');
+      });
+      mobileNav && mobileNav.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') mobileNav.classList.remove('open');
+      });
+    })();
+
+    // Scroll to top button
+    (function() {
+      const topBtn = document.getElementById('scroll-top');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) topBtn.classList.add('visible');
+        else topBtn.classList.remove('visible');
+      });
+      topBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+
+    // Current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-
 
 
 
