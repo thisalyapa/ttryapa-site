@@ -1,42 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thisal Yapa - About</title>
-  <meta name="description" content="Learn more about Thisal Yapa.">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Thisal Yapa</title>
 
-  <!-- Google Fonts -->
+  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  <script>
+    (function() {
+      const stored = localStorage.getItem('theme');
+      if (stored) document.documentElement.setAttribute('data-theme', stored);
+      else document.documentElement.setAttribute('data-theme', 'dark');
+    })();
+  </script>
 </head>
 <body>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html" class="active">About</a>
-    <a href="projects.html">Projects</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-
-  <div class="content fade-in">
-    <div class="contact-box">
-      <h1>About Me</h1>
-      <img src="myphoto.jpg" alt="Thisal Yapa smiling">
-      <p>Hello! I’m Thisal Yapa, a student and aspiring developer with a passion for programming, electronics, and creating useful projects. I enjoy learning new technologies and solving problems.</p>
-
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="index.html" class="logo">
+          <span class="logo-mark">TY</span>
+          <span class="logo-text">Thisal Yapa</span>
+        </a>
+      </div>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
     </div>
-  </div>
+  </header>
 
+  <!-- About Section -->
+  <main>
+    <section class="container fade-up">
+      <h1>About Me</h1>
+      <p>
+        Hello! I’m <strong>Thisal Yapa</strong>, an <strong>undergraduate student in Computer Engineering</strong> at the 
+        <strong>University of Peradeniya, Sri Lanka</strong>. I’m deeply passionate about programming, 
+        computer systems, and electronics — always eager to learn how things work from the ground up.
+      </p>
+
+      <p>
+        My interests lie in areas such as systems programming, embedded design, and low-level graphics. 
+        I enjoy building small but meaningful projects that help me explore how software and hardware 
+        interact, and how elegant code can bring ideas to life.
+      </p>
+
+      <p>
+        Beyond academics, I love experimenting with new technologies, developing personal projects, and 
+        continuously learning to expand my technical and creative skills.
+      </p>
+
+      <h2>Skills & Interests</h2>
+      <ul>
+        <li><strong>Programming Languages:</strong> C, Python, ARM Assembly</li>
+        <li><strong>Core Areas:</strong> Systems Programming, Embedded Systems, Computer Graphics</li>
+        <li><strong>Tools & Platforms:</strong> Linux, Git, Make, VS Code</li>
+      </ul>
+
+      <div style="margin-top:20px;">
+        <a href="projects.html" class="btn primary">View My Projects</a>
+        <a href="contact.html" class="btn ghost">Get in Touch</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>© <span id="year"></span> Thisal Yapa • All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-
-
-
