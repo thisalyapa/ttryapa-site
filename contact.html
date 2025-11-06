@@ -1,56 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thisal Yapa - Contact</title>
-  <meta name="description" content="Get in touch with Thisal Yapa.">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Thisal Yapa</title>
 
-  <!-- Google Fonts -->
+  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  <script>
+    // Theme initialization
+    (function() {
+      const stored = localStorage.getItem('theme');
+      if (stored) document.documentElement.setAttribute('data-theme', stored);
+      else document.documentElement.setAttribute('data-theme', 'dark');
+    })();
+  </script>
+
+  <style>
+    /* Slide-in message popup */
+    .sent-message {
+      position: fixed;
+      bottom: 24px;
+      right: -350px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      color: #021022;
+      padding: 14px 18px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.5);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      transform: translateY(0);
+      opacity: 0;
+      transition: right 0.5s cubic-bezier(0.2, 0.8, 0.3, 1), opacity 0.3s ease;
+      z-index: 100;
+    }
+    .sent-message.show {
+      right: 24px;
+      opacity: 1;
+    }
+  </style>
 </head>
 <body>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="projects.html">Projects</a>
-    <a href="contact.html" class="active">Contact</a>
-  </nav>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="index.html" class="logo">
+          <span class="logo-mark">TY</span>
+          <span class="logo-text">Thisal Yapa</span>
+        </a>
+      </div>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-  <div class="content fade-in">
-    <div class="contact-box">
-      <h1>Contact Me</h1>
-      <p>Fill out the form below or reach me via social media:</p>
+  <!-- Main -->
+  <main>
+    <section class="container fade-up">
+      <h1>Get in Touch</h1>
+      <p>If you'd like to collaborate, discuss a project, or just say hi — feel free to reach out!</p>
 
-      <form action="https://formspree.io/f/xjkpjobq" method="POST">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name" required><br><br>
+      <div class="about-card">
+        <!-- ✅ Formspree integration -->
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/xjkpjobq" method="POST">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" placeholder="Your name" required>
 
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="_replyto" required><br><br>
+          <label for="email">Email</label>
+          <input type="email" name="_replyto" id="email" placeholder="your@email.com" required>
 
-        <label for="message">Message:</label><br>
-        <textarea id="message" name="message" rows="5" required></textarea><br><br>
+          <label for="message">Message</label>
+          <textarea name="message" id="message" rows="5" placeholder="Write your message here..." required></textarea>
 
-        <button type="submit">Send Message</button>
-      </form>
+          <button type="submit" class="btn primary">Send Message</button>
+        </form>
+      </div>
 
-      <ul class="social-links">
-        <li><a href="https://www.facebook.com/share/17Tv2SjEbY/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook fa-3x"></i></a></li>
-        <li><a href="https://github.com/thisalyapa" target="_blank"><i class="fab fa-github fa-3x"></i></a></li>
-        <li><a href="https://www.instagram.com/thisalyapa?igsh=MXVmNDZjOGsxeWJ5MQ%3D%3D&utm_source=qr" target="_blank"><i class="fab fa-instagram fa-3x"></i></a></li>
-      </ul>
-     </div>
+      <!-- Social Links -->
+      <div style="text-align:center; margin-top:32px;">
+        <h2>Connect with Me</h2>
+        <ul class="social-links" style="justify-content:center; margin-top:12px;">
+          <li>
+            <a href="https://github.com/thisalyapa" target="_blank" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/share/17Tv2SjEbY/?mibextid=wwXIf" target="_blank" aria-label="Facebook">
+              <i class="fab fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/thisalyapa?igsh=MXVmNDZjOGsxeWJ5MQ%3D%3D&utm_source=qr" target="_blank" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div style="text-align:center; margin-top:22px;">
+        <p>Or email me directly at <a href="mailto:thulnith710@gmail.com" class="link">thulnith710@gmail.com</a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Sent message popup -->
+  <div class="sent-message" id="sentMessage">
+    <i class="fas fa-check-circle"></i> Message Sent Successfully!
   </div>
 
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>© <span id="year"></span> Thisal Yapa • All rights reserved.</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Handle form submission + slide-in popup
+    const form = document.getElementById('contactForm');
+    const sentMsg = document.getElementById('sentMessage');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          // Slide-in popup animation
+          sentMsg.classList.add('show');
+          setTimeout(() => sentMsg.classList.remove('show'), 3500);
+          form.reset();
+        } else {
+          alert("Sorry, something went wrong. Please try again.");
+        }
+      } catch (err) {
+        alert("Error sending message. Please check your internet connection.");
+      }
+    });
+  </script>
 </body>
 </html>
+
+
+
